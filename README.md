@@ -1,8 +1,8 @@
-# Python Projekte
+# Python Projects
 
 <p align="center">
   <strong>Python · discord.py · SQLite</strong><br>
-  Ein Discord-Bot mit Moderation, Rollenverwaltung und Levelsystem.
+  A Discord bot with moderation, role management, and a leveling system.
 </p>
 
 <p align="center">
@@ -13,81 +13,81 @@
 
 ---
 
-## Über das Projekt
+## About the Project
 
-Dieses Repository enthält einen Discord-Bot auf Basis von `discord.py`, entstanden im Rahmen des Python-Kurses BACKEND 03 der Developer Akademie.
+This repository contains a Discord bot built with `discord.py`, created as part of the Python course **BACKEND 03** at Developer Akademie.
 
-Das Projekt verbindet die Arbeit mit einer externen API, asynchrone Programmierung, persistente Datenspeicherung und die Entwicklung eigener Bot-Befehle.
+The project covers working with an external API, asynchronous programming, persistent data storage, and building custom bot commands.
 
-## Funktionen
+## Features
 
-| Bereich              | Funktionen                                                                             |
-| -------------------- | -------------------------------------------------------------------------------------- |
-| **Moderation**       | Warnungen, Kick, Ban, Timeout und Nachrichten löschen                                  |
-| **AutoMod**          | Erkennung von Spam, Links und übermäßiger Großschreibung                               |
-| **Verwarnungen**     | Speicherung von Warnungen und automatischer Timeout ab einer konfigurierbaren Schwelle |
-| **Levelsystem**      | XP sammeln, Level aufsteigen, Rang anzeigen und Bestenliste abrufen                    |
-| **Rollenverwaltung** | Rollen manuell, über Level oder durch Reaktionen vergeben                              |
-| **Community**        | Begrüßungsnachrichten und benutzerdefinierte Befehle                                   |
-| **Datenbank**        | Speicherung von Leveln, Warnungen, Rollen und Einstellungen in SQLite                  |
+| Area               | Functionality                                                                   |
+| ------------------ | -------------------------------------------------------------------------------- |
+| **Moderation**      | Warnings, kick, ban, timeout, and message deletion                              |
+| **AutoMod**         | Detection of spam, links, and excessive capitalization                         |
+| **Warnings**        | Warning storage with automatic timeout above a configurable threshold          |
+| **Leveling**        | Earn XP, level up, view rank, and check the leaderboard                        |
+| **Role Management** | Assign roles manually, by level, or via reactions                              |
+| **Community**       | Welcome messages and custom commands                                            |
+| **Database**        | Levels, warnings, roles, and settings stored in SQLite                         |
 
-## Technologien
+## Technologies
 
-- **Python** – Programmiersprache
-- **discord.py** – Anbindung an die Discord API
-- **SQLite** – lokale Datenbank ohne separaten Datenbankserver
-- **python-dotenv** – Laden der Konfiguration aus einer `.env`-Datei
-- **Git und GitHub** – Versionsverwaltung und Dokumentation
+- **Python** – programming language
+- **discord.py** – Discord API integration
+- **SQLite** – local database, no separate database server required
+- **python-dotenv** – loads configuration from a `.env` file
+- **Git & GitHub** – version control and documentation
 
-## Voraussetzungen
+## Requirements
 
-- Eine installierte Python-Version, die mit den Abhängigkeiten in `requirements.txt` kompatibel ist
-- Ein eingerichteter Discord-Bot
-- Die erforderlichen Bot-Berechtigungen für Moderation und Rollenverwaltung
+- A Python version compatible with the dependencies in `requirements.txt`
+- A configured Discord bot
+- The required bot permissions for moderation and role management
 
-Für die verwendeten Funktionen müssen im Discord Developer Portal die benötigten Gateway Intents aktiviert sein, insbesondere **Message Content Intent** und **Server Members Intent**.
+The **Message Content Intent** and **Server Members Intent** must be enabled in the Discord Developer Portal.
 
 ## Installation
 
-### 1. Repository klonen
+### 1. Clone the repository
 
 ```powershell
 git clone https://github.com/CWhymann/python-projekte.git
 cd python-projekte
 ```
 
-### 2. Virtuelle Umgebung erstellen
+### 2. Create a virtual environment
 
 ```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
-### 3. Abhängigkeiten installieren
+### 3. Install dependencies
 
 ```powershell
 python -m pip install -r requirements.txt
 ```
 
-### 4. Umgebungsvariablen konfigurieren
+### 4. Configure environment variables
 
-Erstelle im Projektverzeichnis eine Datei namens `.env` und trage dein Discord-Bot-Token ein:
+Create a file named `.env` in the project root and add your Discord bot token:
 
 ```env
-DISCORD_TOKEN=dein_discord_bot_token
+DISCORD_TOKEN=your_discord_bot_token
 ```
 
-Ersetze den Platzhalter durch dein tatsächliches Token. Gib dieses niemals weiter und veröffentliche es nicht auf GitHub.
+Replace the placeholder with your actual token. Never share it or publish it on GitHub.
 
-### 5. Bot starten
+### 5. Start the bot
 
 ```powershell
 python bot.py
 ```
 
-Beim Start legt der Bot die benötigten SQLite-Tabellen in der lokalen Datenbank `bot_data.db` an.
+On startup, the bot creates the required SQLite tables in the local database `bot_data.db`.
 
-## Projektstruktur
+## Project Structure
 
 ```text
 python-projekte/
@@ -102,27 +102,27 @@ python-projekte/
 └── README.md
 ```
 
-### Zusätzliche Skripte
+### Additional Scripts
 
-- `check_db.py` – zeigt vorhandene Datenbanktabellen und ausgewählte Datensätze an.
-- `set_level.py` – setzt das Level eines Benutzers. Vor der Ausführung müssen `USER_ID` und `LEVEL` im Skript geprüft und angepasst werden.
-- `main.py` – separates Python-Übungsprogramm.
-- `utils/hallo.py` – enthält eine wiederverwendbare Begrüßungsfunktion.
+- `check_db.py` – displays existing database tables and selected records.
+- `set_level.py` – sets a user's level. `USER_ID` and `LEVEL` must be checked and adjusted in the script before running it.
+- `main.py` – separate Python practice program.
+- `utils/hallo.py` – contains a reusable greeting function.
 
-Die Dateien `.env`, `.venv/`, `__pycache__/` und `bot_data.db` werden durch `.gitignore` von der Versionsverwaltung ausgeschlossen.
+The files `.env`, `.venv/`, `__pycache__/`, and `bot_data.db` are excluded from version control via `.gitignore`.
 
-## Lernziele
+## Learning Objectives
 
-- Python strukturiert einsetzen
-- Mit einer externen API kommunizieren
-- Events und asynchrone Funktionen verwenden
-- Daten mit SQLite dauerhaft speichern
-- Eigene Befehle und Berechtigungsprüfungen implementieren
-- Konfiguration und vertrauliche Zugangsdaten getrennt verwalten
-- Änderungen mit Git nachvollziehbar dokumentieren
+- Apply Python in a structured way
+- Communicate with an external API
+- Use events and asynchronous functions
+- Persist data with SQLite
+- Implement custom commands and permission checks
+- Manage configuration and secrets separately
+- Document changes traceably with Git
 
 ---
 
 <p align="center">
-  <sub>Python-Lernprojekt · Developer Akademie</sub>
+  <sub>Python learning project · Developer Akademie</sub>
 </p>
